@@ -1,3 +1,42 @@
+# _config.yml
 title: Rayya Haqqani
 logo: /assets/Picture%20Rayya.jpg
 theme: jekyll-theme-minimal
+
+# NEW ADDITIONS BELOW
+# ----------------------------
+# Enable collections for projects
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults for projects
+defaults:
+  - scope:
+      path: "_projects"  # Where your project files live
+      type: "projects"   # Matches the collection name
+    values:
+      layout: "project"  # Will use _layouts/project.html
+      show_in_nav: true  # Optional: control nav visibility
+
+# Project data (optional)
+data:
+  project_categories:
+    - name: "Machine Learning"
+      icon: "🤖"
+    - name: "Computer Vision" 
+      icon: "👁️"
+    - name: "NLP"
+      icon: "💬"
+
+# Plugins (enable if needed)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag  # For better SEO
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
